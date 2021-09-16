@@ -10,9 +10,9 @@ for i in range(len(a)):
 if c == 0:  
     print('Да')
 
-# 0
+# 1
 
-a = [9, 9, 9, 9]
+a = [9, 9, 9, 8]
 print(a) 
 a[len(a)-1] += 1 
 for i in range(len(a)-1, -1, -1): 
@@ -30,7 +30,8 @@ for i in range(len(a)-1, -1, -1):
 # 2
 
 a = [2, 3, 5, 11]
-p = 14 
+p = 14
+print(p)
 for i in range(len(a)): 
     if p - a[i] in a: 
         print(a[i], p - a[i]) 
