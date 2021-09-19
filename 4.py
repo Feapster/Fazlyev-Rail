@@ -1,13 +1,21 @@
 a = 'автор'
 b = 'товар'
-c = 0
-if len(a) != len(b):
-    print('Нет')
-else:
-    for i in range(len(a)):
-        if a.count(a[i]) != b.count(a[i]):
-            c = 1
-            print('Нет')
-            break
-if c == 0:
+d1 = {}
+d2 = {}
+
+for i in range(len(a)):
+    if a[i] in d1:
+        d1[a[i]] += 1
+    else:
+        d1[a[i]] = 1
+
+for i in range(len(b)):
+    if b[i] in d2:
+        d2[b[i]] += 1
+    else:
+        d2[b[i]] = 1
+
+if d1 == d2:
     print('Да')
+else:
+    print("Нет")

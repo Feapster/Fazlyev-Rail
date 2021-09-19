@@ -1,7 +1,6 @@
-a = [1, 3, 5, 7, 9, 0]
+a = "135790"
+b = ""
 print(a)
-for i in range(len(a)//2):
-    c = a[len(a) - 1 - i]
-    a[len(a)-1-i] = a[i]
-    a[i] = c
-print(a)
+for i in range(len(a)):
+    b += a[len(a) - 1 - i]
+print(b)
