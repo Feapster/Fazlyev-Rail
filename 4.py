@@ -1,6 +1,5 @@
 a, b = 'автор', 'товар'
-d1 = {}
-d2 = {}
+d1 = d2 = {}
 
 for i in range(len(a)):
     if a[i] in d1:
