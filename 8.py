@@ -1,8 +1,9 @@
 a = 'te n!et'
-s = "!$%&'()*+,-./:;<=>?@[]^_`{|}~# "
 c = 0
 for i in range(len(a)//2):
-    if a[i] != a[len(a) - 1 - i] and a[i] not in s:
+    if not a[i].isalnum() or not a[len(a) - i - 1].isalnum():
+        continue
+    elif a[i] != a[len(a) - 1 - i]:
         print('Нет')
         c = 1
         break
