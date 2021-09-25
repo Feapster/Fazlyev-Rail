@@ -1,4 +1,4 @@
-a = [9, 9, 9, 9]
+a = [1, 2, 3, 4]
 print(a)
 a[len(a)-1] += 1
 for i in range(len(a)-1, -1, -1):

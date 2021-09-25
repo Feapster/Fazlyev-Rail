@@ -1,4 +1,4 @@
-a = "135790"
+a = "135"
 b = ""
 print(a)
 for i in range(len(a)):
