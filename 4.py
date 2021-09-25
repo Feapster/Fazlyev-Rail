@@ -1,14 +1,15 @@
-a = 'автор'
-b = 'товар'
+a, b = 'автор', 'товар'
 d1 = {}
+d2 = {}
 
 for i in range(len(a)):
     if a[i] in d1:
         d1[a[i]] += 1
     else:
         d1[a[i]] = 1
-for i in range(len(a)):
-    if b[i] in d1:
-        del d1[b[i]]
+    if b[i] in d2:
+        d2[b[i]] += 1
+    else:
+        d2[b[i]] = 1
 
-print(len(d1) == 0)
+print(d1 == d2)
