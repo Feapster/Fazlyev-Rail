@@ -11,7 +11,4 @@ for i in range(len(a)):
     if b[i] in d1:
         del d1[b[i]]
 
-if d1 == {}:
-    print('Да')
-else:
-    print("Нет")
+print(len(d1) == 0)
