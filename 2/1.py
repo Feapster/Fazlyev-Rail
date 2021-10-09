@@ -16,7 +16,7 @@ def print_list(first):
     print(current)  # None
 
 
-def reverse(first):
+def reverse_link(first):
     if first.next.next is None:
         current = first
         current_1 = first.next
@@ -49,6 +49,6 @@ for i in range(2):
 
 print_list(first)
 
-first = reverse(first)
+first = reverse_link(first)
 
 print_list(first)
