@@ -17,7 +17,11 @@ def print_list(first):
 
 
 def reverse_link(first):
-    if first.next.next is None:
+    if first is None:
+        return None
+    elif first.next is None:
+        return first
+    elif first.next.next is None:
         current = first
         current_1 = first.next
         current_1.next = current
