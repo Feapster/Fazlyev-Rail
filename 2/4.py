@@ -46,8 +46,8 @@ def switch(first, c_1, c_2):
     return first
 
 
-c_1 = 0
-c_2 = 1
+c_1 = int(input())
+c_2 = int(input())
 e = 2
 
 first = Node(0)
@@ -57,7 +57,6 @@ for i in range(1, e):
     node = Node(i)
     current.next = node
     current = current.next
-
 
 
 print_list(first)
