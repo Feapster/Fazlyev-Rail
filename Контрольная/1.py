@@ -9,9 +9,6 @@ res = []
 i_1 = 0
 i_2 = 0
 
-l_min = min(len(a),len(b))
-l_max = max(len(a),len(b))
-
 for i in range(len(a) + len(b)):
     if i_1 == len(a) and i_2 == len(b):
         break
