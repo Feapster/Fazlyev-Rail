@@ -8,10 +8,8 @@ def print_list(first):
     # Выводим список
     print("____________")
     current = first
-    i = 0
     while current is not None:
         print(current.value)
-        i += 1
         current = current.next
     print(current)  # None
 

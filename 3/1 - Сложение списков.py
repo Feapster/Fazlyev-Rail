@@ -1,3 +1,6 @@
+from random import randint
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -8,10 +11,8 @@ def print_list(first):
     # Выводим список
     print("____________")
     current = first
-    i = 0
     while current is not None:
         print(current.value)
-        i += 1
         current = current.next
     print(current)  # None
 
@@ -53,59 +54,59 @@ def length(first):
 
 
 def sum_lists(first, second):
+    first = reverse_link_values(first)
+    second = reverse_link_values(second)
     current_1 = first
     current_2 = second
-    len_1 = min(length(first),length(second))
-    len_2 = max(length(first), length(second))
-    s = Node(0)
-    current = s
-    for i in range(len_2 - 1):
-        node = Node(0)
-        current.next = node
-        current = current.next
-    current_3 = s
-    for i in range(len_1):
-        current_3.value = current_1.value + current_2.value
-        current_1 = current_1.next
-        current_2 = current_2.next
-        current_3 = current_3.next
-    print_list(s)
+    r = abs(length(first) - length(second))
+    if length(first) > length(second):
+        for i in range(r):
+            current_1 = current_1.next
+        for i in range(length(first) - r):
+            current_1.value += current_2.value
+            current_1 = current_1.next
+            current_2 = current_2.next
+        s = first
+    elif length(first) < length(second):
+        for i in range(r):
+            current_2 = current_2.next
+        for i in range(length(first) - r):
+            current_2.value += current_1.value
+            current_1 = current_1.next
+            current_2 = current_2.next
+        s = second
     s = reverse_link_values(s)
     current = s
-    for i in range(len):
+    for i in range(length(s)):
         if current.value >= 10 and current.next is not None:
             current.next.value += 1
             current.value -= 10
         if current.value >= 10 and current.next is None:
-            node = Node(0)
+            node = Node(1)
             current.next = node
-            current.next.value += 1
             current.value -= 10
         current = current.next
     return s
 
 
-l = 12
-p = 8
+l = 3
+p = 2
 
-first = Node(0)
+first = Node(randint(1,9))
 current = first
 
-for i in range(1,l):
-    node = Node(i * 2)
+for i in range(l):
+    node = Node(randint(1,9))
     current.next = node
     current = current.next
 
-second = Node(p)
+second = Node(randint(1,9))
 current = second
 
-
-
-for i in range(p - 1, -1, - 1):
-    node = Node(i * 4)
+for i in range(p):
+    node = Node(randint(1,9))
     current.next = node
     current = current.next
-
 
 print_list(first)
 print_list(second)
@@ -113,3 +114,4 @@ print_list(second)
 summ = sum_lists(first, second)
 
 print_list(summ)
+
