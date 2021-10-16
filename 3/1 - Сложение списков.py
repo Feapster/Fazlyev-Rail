@@ -43,23 +43,28 @@ def reverse_link_values(first):
     return first
 
 
+def length(first):
+    i = 1
+    current = first
+    while current.next is not None:
+        i += 1
+        current = current.next
+    return i
+
 
 def sum_lists(first, second):
     current_1 = first
     current_2 = second
-    current = first
-    len = 1
-    while current.next is not None:
-        current = current.next
-        len += 1
+    len_1 = min(length(first),length(second))
+    len_2 = max(length(first), length(second))
     s = Node(0)
     current = s
-    for i in range(len - 1):
+    for i in range(len_2 - 1):
         node = Node(0)
         current.next = node
         current = current.next
     current_3 = s
-    for i in range(len):
+    for i in range(len_1):
         current_3.value = current_1.value + current_2.value
         current_1 = current_1.next
         current_2 = current_2.next
@@ -77,25 +82,27 @@ def sum_lists(first, second):
             current.next.value += 1
             current.value -= 10
         current = current.next
-    s = reverse_link_values(s)
     return s
 
 
 l = 12
+p = 8
 
 first = Node(0)
 current = first
 
 for i in range(1,l):
-    node = Node(i)
+    node = Node(i * 2)
     current.next = node
     current = current.next
 
-second = Node(l - 1)
+second = Node(p)
 current = second
 
-for i in range(l - 2, -1, - 1):
-    node = Node(i)
+
+
+for i in range(p - 1, -1, - 1):
+    node = Node(i * 4)
     current.next = node
     current = current.next
 
