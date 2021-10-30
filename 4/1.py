@@ -22,7 +22,7 @@ class Tamagochi:
             print("Health =", self.health)
             print("Satiety =", self.satiety)
             print(time.ctime())
-            print("___________")
+            return "________________________"
 
     def feed(self):
         if self.health <= 0:
@@ -38,5 +38,5 @@ print(T_1.name)
 for i in range(8):
     print(T_1.check())
     time.sleep(30)
-    if i % 3 == 0:
+    if i % 4 == 0:
         T_1.feed()
