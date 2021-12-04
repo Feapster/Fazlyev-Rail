@@ -5,10 +5,8 @@ nums = int(input())
 n = randint(0, nums)
 
 a = [[randint(0, nums) for i in range(n)] for j in range(n)]
-b = []
 
-for i in range(nums + 1):
-    b.append(i)
+b = [0 for g in range(nums + 1)]
 
 for i in range(n):
     for j in range(n):
